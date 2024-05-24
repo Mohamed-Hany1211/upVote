@@ -1,0 +1,506 @@
+{
+	"info": {
+		"_postman_id": "a9887915-b0d9-44f2-9b1f-999247ad3851",
+		"name": "upVote",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29980792"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userName",
+									"value": "mohamed hany",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "mohamed @gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "mohamed123",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "22",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/D:/fullstack web/Backend/Projects/asignments/upVote/uploads/general/1g2agjh823-1.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/signUp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"mohamed@gmail.com\",\r\n    \"password\":\"mohamed123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/signIn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"signIn"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "addProduct",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwiaWQiOiI2NjRmY2RmODUxYzYwMjhjYjhiOTVmNzIiLCJpYXQiOjE3MTY1NjczMTcsImV4cCI6MTcxNjU3MDkxN30.7VZL4KQe8yZsrHX3cSKkAJ2kr678gzmH7AVsNRmk5wU"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "product 7",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/D:/fullstack web/Backend/Projects/asignments/upVote/uploads/general/1g2agjh823-1.jpg"
+								},
+								{
+									"key": "img",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/products/addProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"addProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllLikesForProduct",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/products/getAllLikesForProduct/664fd03eb8d6157c54134a53",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"getAllLikesForProduct",
+								"664fd03eb8d6157c54134a53"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhYm9AZ21haWwuY29tIiwiaWQiOiI2NjQ2MzhiNGZiN2MwYjE1YTFlZTBiZGIiLCJpYXQiOjE3MTY1NjYzNjMsImV4cCI6MTcxNjU2OTk2M30.-Cm2Mcfq9iyuU2Ls7Cw2W_aTxl1_K5Oi_fKY4SyPRN0"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "update product7",
+									"type": "text"
+								},
+								{
+									"key": "caption",
+									"value": "good product",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/D:/fullstack web/Backend/Projects/asignments/upVote/uploads/general/1g2agjh823-1.jpg"
+								},
+								{
+									"key": "oldPublicId",
+									"value": "upVoteImgs/products/664638b4fb7c0b15a1ee0bdb/h472f/nkfo51m5xojvcblzq6dl",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/products/updateProduct/664fd03eb8d6157c54134a53",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"updateProduct",
+								"664fd03eb8d6157c54134a53"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwiaWQiOiI2NjRmY2RmODUxYzYwMjhjYjhiOTVmNzIiLCJpYXQiOjE3MTY1NjczMTcsImV4cCI6MTcxNjU3MDkxN30.7VZL4KQe8yZsrHX3cSKkAJ2kr678gzmH7AVsNRmk5wU"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/products/deleteProduct/6650bd7a54585b0694aeb449",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"deleteProduct",
+								"6650bd7a54585b0694aeb449"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhYm9AZ21haWwuY29tIiwiaWQiOiI2NjQ2MzhiNGZiN2MwYjE1YTFlZTBiZGIiLCJpYXQiOjE3MTY1NjYzNjMsImV4cCI6MTcxNjU2OTk2M30.-Cm2Mcfq9iyuU2Ls7Cw2W_aTxl1_K5Oi_fKY4SyPRN0"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/products/getAllProducts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"getAllProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "likeOrUnlike",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwiaWQiOiI2NjRmY2RmODUxYzYwMjhjYjhiOTVmNzIiLCJpYXQiOjE3MTY1NjU3ODEsImV4cCI6MTcxNjU2OTM4MX0.Ue_Q9PI_q_pPAthVKp2DYGEFyosVeaPPyuQbiFNFxz4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"onModel\":\"Product\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/products/like/664fd03eb8d6157c54134a53",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"like",
+								"664fd03eb8d6157c54134a53"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "addComment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwiaWQiOiI2NjRmY2RmODUxYzYwMjhjYjhiOTVmNzIiLCJpYXQiOjE3MTY1NjkwOTksImV4cCI6MTcxNjU3MjY5OX0.juaQjYPk09G-LnKhgpGVhuyIMuzMSbfTVlwIx81V180"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"good product bro updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/comments/addComment/6650bdcd54585b0694aeb450",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comments",
+								"addComment",
+								"6650bdcd54585b0694aeb450"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "likeOrUnlikeComment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwiaWQiOiI2NjRmY2RmODUxYzYwMjhjYjhiOTVmNzIiLCJpYXQiOjE3MTY1NjkwOTksImV4cCI6MTcxNjU3MjY5OX0.juaQjYPk09G-LnKhgpGVhuyIMuzMSbfTVlwIx81V180"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"onModel\":\"Comment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/comments/likeOrUnlikeComment/6650c59814ee7f8d99958911",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comments",
+								"likeOrUnlikeComment",
+								"6650c59814ee7f8d99958911"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "likes",
+			"item": [
+				{
+					"name": "getUserLikesHestory",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwiaWQiOiI2NjRmY2RmODUxYzYwMjhjYjhiOTVmNzIiLCJpYXQiOjE3MTY1Njg4MjcsImV4cCI6MTcxNjU3MjQyN30.uA3BR2OuLN1Ykrs75EpY_AubyJAiufQiChA7J9MLgLI"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/likes/getUserLikes?onModel=Product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"likes",
+								"getUserLikes"
+							],
+							"query": [
+								{
+									"key": "onModel",
+									"value": "Product"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "likeOrUnlike",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwiaWQiOiI2NjRmY2RmODUxYzYwMjhjYjhiOTVmNzIiLCJpYXQiOjE3MTY1Njg4MjcsImV4cCI6MTcxNjU3MjQyN30.uA3BR2OuLN1Ykrs75EpY_AubyJAiufQiChA7J9MLgLI"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"onModel\":\"Comment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/likes/likeOrUnlike/65daf0189b6f667d82b9322f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"likes",
+								"likeOrUnlike",
+								"65daf0189b6f667d82b9322f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reply",
+			"item": [
+				{
+					"name": "addReply",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accessToken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtZWRAZ21haWwuY29tIiwiaWQiOiI2NjRmY2RmODUxYzYwMjhjYjhiOTVmNzIiLCJpYXQiOjE3MTY1NzExMDgsImV4cCI6MTcxNjU3NDcwOH0.LHzxfxD5C2SpsdfC61l0kqG4FpFenvJ0vtjnkxj3oHI"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"nice one\",\r\n    \"onModel\":\"Comment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/reply/addReply/6650c59814ee7f8d99958911",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reply",
+								"addReply",
+								"6650c59814ee7f8d99958911"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
